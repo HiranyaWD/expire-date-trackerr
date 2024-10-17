@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Stock Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img class="logo" src="Untitled-design.png" alt="Logo"></a>
+        <div>
+            <ul id="navbar" class="navbar">
+                <li><a href="#add-pro" class="active">Add product</a></li>
+                <li><a href="#pro-list">Product List</a></li>
+                <li><a href="#scanner-modal">Scan Barcode</a></li>
+                <li><a href="">Notifications</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <h1 class="h1">Add Product</h1>
+    <section id="add-pro">
+        <div class="img"><img class="image" src="Colorful Abstract Online Shop Free Logo.png" alt=""></div>
+        <div class="container">
+            <!-- Add Product Form -->
+            <div class="form-container">
+                <form id="product-form">
+                    <div class="form-fields">
+                        <label for="product-image">Product Image:</label>
+                        <input type="file" id="product-image" required><br>
+                        
+                        <label class="lable" for="product-name">Product Name:</label>
+                        <input type="text" id="product-name" class="input" required><br>
+                    
+                        <label class="lable" for="product-quantity">Quantity:</label>
+                        <input type="number" id="product-quantity" class="input" required><br>
+                    
+                        <label for="product-expiry">Expiry Date:</label>
+                        <input type="date" id="product-expiry" class="input" required><br>
+                    
+                        <label for="barcode">Barcode ID:</label>
+                        <input type="text" id="barcode" class="input" required><br>
+                    
+                        <button class="submit">Add Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="pro-list">
+        <h1 class="h2">Product List</h1>
+        <div id="product-search" style="margin-bottom: 20px; position: relative; display: inline-block;">
+            <input type="text" id="search-bar" placeholder="Search by product name" onkeyup="applySearch()" style="padding: 10px 40px 10px 20px; width: 300px; border: 1px solid #ccc; border-radius: 5px;">
+            <i class="fa fa-search search-icon" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;" onclick="applySearch()"></i>
+        </div>
+        <div id="product-list"></div>
+    </section>
+
+    <section id="scanner">
+        <h1 class="h2">Scan Product Barcode</h1>
+        <button id="open-scanner">Open Scanner</button>
+    </section>
+
+    <div id="scanner-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Barcode Scanner</h2>
+            
+            <!-- Real Barcode Scanner -->
+            <div id="real-scanner-section">
+                <video id="barcode-video" width="300" height="200"></video>
+                <p>Scan the barcode using your device camera.</p>
+            </div>
+    
+            <!-- Manual Input Section -->
+            <div id="manual-scanner-section">
+                <input type="text" id="barcode-scan-input" placeholder="Enter Barcode" />
+                <button id="scan-button">Scan Product</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification-panel">
+        <h1 class="h2">Notifications</h1>
+        <ul id="notification-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript code for barcode scanning functionality
+        document.getElementById('open-scanner').addEventListener('click', function () {
+            const modal = document.getElementById('scanner-modal');
+            modal.style.display = 'block';
+            startScanner();
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            const modal = document.getElementById('scanner-modal');
+            modal.style.display = 'none';
+            stopScanner();
+        });
+
+        function startScanner() {
+            Quagga.init({
+                inputStream: {
+                    name: "Live",
+                    type: "LiveStream",
+                    target: document.getElementById('barcode-video'), // video element to render stream
+                },
+                decoder: {
+                    readers: ["code_128_reader"] // Add other barcode formats here if needed
+                },
+            }, function (err) {
+                if (err) {
+                    console.log(err);
+                    return;
+                }
+                Quagga.start();
+                Quagga.onDetected(function (data) {
+                    const code = data.codeResult.code;
+                    document.getElementById('barcode').value = code; // Set scanned code in the barcode input
+                    stopScanner(); // Stop scanning after a successful scan
+                });
+            });
+        }
+
+        function stopScanner() {
+            Quagga.stop();
+            const modal = document.getElementById('scanner-modal');
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
