@@ -80,7 +80,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 10px 80px;
     background: #022C43;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index:1 ;
@@ -160,6 +160,13 @@ button {
   display: flex;
 }
 
+.btn{
+  padding: 5px 5px;
+  color: #ffffff;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
   /*Add-procuts */ 
 .container {
   display: flex;
@@ -175,15 +182,16 @@ button {
   background-color: #022C43;
   padding: 40px; /* Padding around the form */
   border-radius: 10px;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
   width: 100%; /* Adjust width of the form */
   margin-top: 30px;
   margin-left: 200px;
 }
 .image{
-  margin-left: 200px;
-  padding: -70px;
+  margin-left: 300px;
+  padding: -90px;
+  margin-top: 70px;
 }
 .title {
   font-size: 1.5rem;
@@ -288,7 +296,13 @@ margin-top: 50px;
   font-size: 36px;
   color: #fff;
 }
-
+.h3{
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+}
 
 
 
@@ -296,7 +310,7 @@ margin-top: 50px;
 
 
 #update-product-form {
-  background-color: #f4f4f9;
+  background-color: #022C43;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -308,7 +322,7 @@ margin-top: 50px;
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #333;
+  color: #fff;
 }
 
 #update-product-form input {
@@ -316,20 +330,23 @@ margin-top: 50px;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffffff;
   font-size: 16px;
   box-sizing: border-box;
+  background: none;
+  color: #fff;
 }
 
 #update-product-form p {
   font-size: 18px;
-  color: #ff7b00;
+  color: #ff0000;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Styling for Buttons */
 #update-product-form button {
-  background-color: #5792f0;
+  background-color: #115173;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -365,11 +382,19 @@ button[onclick^="deleteProduct"]:hover {
 #open-scanner{
   width: 200px;
   align-items: center;
-  margin-left: 43%;
-  margin-top: 20px;
+  margin-left: 45%;
+  margin-top: 50px;
+  background-color: #022C43;
+  border-radius: 10px;
+  padding: 20px;
 }
-
-
+#open-scanner:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+#product-list{
+  margin-left: 80px;
+}
 
 
 /* Styling for search bar and icon */
@@ -380,6 +405,7 @@ button[onclick^="deleteProduct"]:hover {
   border-radius: 5px;
   font-size: 16px;
   text-align: center;
+  margin-left: 20px;
 }
 #product-search{
   align-items: center;
@@ -451,7 +477,7 @@ button[onclick^="deleteProduct"]:hover {
 
 #scan-button {
   padding: 10px;
-  background-color: #007bff;
+  background-color: #115173;
   color: white;
   border: none;
   border-radius: 5px;
@@ -461,7 +487,7 @@ button[onclick^="deleteProduct"]:hover {
 
 #notification-panel {
   
-  padding: 10px;
+  padding: 10px 100px;
   margin: 10px 0;
   background-color: #155f86;
 }
@@ -471,7 +497,7 @@ button[onclick^="deleteProduct"]:hover {
   align-items: center; /* Center vertically */
   background-color: #FFD700; /* Light yellow background */
   border: 1px solid #FFD700; /* Yellow border */
-  padding: 20px;
+  padding: 15px;
   margin-bottom: 10px; /* Space between notifications */
   border-radius: 5px; /* Rounded corners */
   position: relative; /* For positioning warning sign */
