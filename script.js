@@ -164,14 +164,14 @@ function checkForExpiryNotifications() {
 
             // Create warning icon (you can use an SVG or an image)
             const warningIcon = document.createElement('img');
-            warningIcon.src = '/Untitled-design.png'; // Replace with your warning icon path
+            warningIcon.src = '/warning.png'; // Replace with your warning icon path
             warningIcon.alt = 'Warning';
             warningIcon.classList.add('warning-icon');
 
             // Create notification text
             const notificationText = document.createElement('span');
             notificationText.classList.add('notification-text');
-            notificationText.innerText = `Product "${product.name}" is close to expiry (in ${daysLeft} days).`;
+            notificationText.innerText = `Product " ${product.name}" is close to expiry (in ${daysLeft} days).`;
 
             // Append icon and text to notification item
             notificationItem.appendChild(warningIcon);
