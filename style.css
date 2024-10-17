@@ -7,10 +7,10 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    
     padding: 0;
     margin: 0;
-    background-color: #E5E5E5;
+    background-color: #155f86;
 }
 
 button {
@@ -39,7 +39,7 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom,rgba(255, 255, 255, 0.562),rgb(197, 201, 205));
+  background: linear-gradient(to bottom,rgba(255, 255, 255, 0.562),rgb(142, 215, 255));
   z-index: 2;
   transition: 0.5s all;
   opacity: 0;
@@ -81,7 +81,7 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 20px 80px;
-    background: #14213d;
+    background: #022C43;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     z-index:1 ;
     position:sticky;
@@ -172,7 +172,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: #fff;
+  background-color: #022C43;
   padding: 40px; /* Padding around the form */
   border-radius: 10px;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
@@ -192,11 +192,11 @@ button {
   margin-top: 50px;
 }
 
-.label {
+.lable {
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 1rem;
-  color: #374151;
+  color: #fff;
 }
 
 
@@ -239,16 +239,18 @@ object-fit: cover; /* Maintain aspect ratio while covering */
 .input {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   font-size: 1rem;
   margin-top: 0.25rem;
+  background: none;
+  color: #fff;
 }
 
 .submit {
   width: 100%;
   padding: 0.75rem;
-  background-color: #024CAA;
+  background-color: #115173;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -264,6 +266,7 @@ object-fit: cover; /* Maintain aspect ratio while covering */
   flex: 2;
   display: flex;
   flex-direction: column;
+  color: #fff;
 }
 h2{
 text-align: center;
@@ -273,7 +276,7 @@ margin-top: 50px;
   text-align: center;
   margin-top: 40px;
   margin-left: 580px;
-  color: #0b4480;
+  color: #fff;
 }
 
 
@@ -283,7 +286,7 @@ margin-top: 50px;
   margin-top: 20px;
   text-align: center;
   font-size: 36px;
-  color: #0b4480;
+  color: #fff;
 }
 
 
@@ -457,17 +460,17 @@ button[onclick^="deleteProduct"]:hover {
 
 
 #notification-panel {
-  border: 1px solid #ccc;
+  
   padding: 10px;
   margin: 10px 0;
-  background-color: #f9f9f9;
+  background-color: #155f86;
 }
 
 .notification-item {
   display: flex; /* Use flexbox for alignment */
   align-items: center; /* Center vertically */
-  background-color: #f9d100; /* Light yellow background */
-  border: 1px solid #f9d100; /* Yellow border */
+  background-color: #FFD700; /* Light yellow background */
+  border: 1px solid #FFD700; /* Yellow border */
   padding: 20px;
   margin-bottom: 10px; /* Space between notifications */
   border-radius: 5px; /* Rounded corners */
