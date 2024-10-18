@@ -512,4 +512,8 @@ button[onclick^="deleteProduct"]:hover {
 .notification-item .notification-text {
   flex-grow: 1; /* Take remaining space */
 }
-
+.warning-icon {
+  color: #000000;
+  font-size: 40px;
+  
+}
