@@ -146,7 +146,7 @@ document.getElementById('scan-button').addEventListener('click', () => {
     }
 });
 
-// Check for products close to expiry (within 5 days)
+/// Check for products close to expiry (within 5 days)
 function checkForExpiryNotifications() {
     notificationList.innerHTML = '';  // Clear previous notifications
     const products = JSON.parse(localStorage.getItem('products')) || [];
@@ -162,16 +162,14 @@ function checkForExpiryNotifications() {
             const notificationItem = document.createElement('li');
             notificationItem.classList.add('notification-item');
 
-            // Create warning icon (you can use an SVG or an image)
-            const warningIcon = document.createElement('img');
-            warningIcon.src = '/warning.png'; // Replace with your warning icon path
-            warningIcon.alt = 'Warning';
-            warningIcon.classList.add('warning-icon');
+            // Create warning icon (using Font Awesome for example)
+            const warningIcon = document.createElement('i');
+            warningIcon.classList.add('fas', 'fa-exclamation-triangle', 'warning-icon');
 
             // Create notification text
             const notificationText = document.createElement('span');
             notificationText.classList.add('notification-text');
-            notificationText.innerText = `Product " ${product.name}" is close to expiry (in ${daysLeft} days).`;
+            notificationText.innerText = `Product "${product.name}" is close to expiry (in ${daysLeft} days).`;
 
             // Append icon and text to notification item
             notificationItem.appendChild(warningIcon);
