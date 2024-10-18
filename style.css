@@ -503,15 +503,13 @@ button[onclick^="deleteProduct"]:hover {
   position: relative; /* For positioning warning sign */
 }
 
-.notification-item .warning-icon {
-  width: 36px; /* Size of warning icon */
-  height: 36px; /* Size of warning icon */
-  margin-right: 20px; /* Space between icon and text */
-}
+
 
 .notification-item .notification-text {
   flex-grow: 1; /* Take remaining space */
+
 }
+
 .warning-icon {
   color: #000000;
   font-size: 40px;
